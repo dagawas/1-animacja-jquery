@@ -18,15 +18,15 @@ $(function () {
         // $(this).animate({ backgroundColor: "blue" }), 5000;
         // $(this).css("background-color", "blue").animate({}), 5000;
         // $(this).css("background-color", "red")
-        $(this).css({
-          transition: "background-color 5s",
-          backgroundColor: "blue",
-        });
-
-        setTimeout(() => {
-          kwadrat.append("<h2>Animacja zakończona</h2>");
-          
-        });
+        kwadrat.animate(
+          {
+            "background-color": "blue",
+          },
+          3000,
+          function () {
+            kwadrat.append("<h2>Animacja zakończona</h2>");
+          }
+        );
       }
     );
   });
