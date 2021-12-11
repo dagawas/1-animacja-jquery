@@ -8,14 +8,25 @@ $(function () {
     console.log(kwadrat);
 
     kwadrat.animate(
-      { margin: "left 100px", width: "100px", height: "100px" },
+      {
+        margin: "left 100px",
+        width: "100px",
+        height: "100px",
+      },
       3000,
       function () {
         // $(this).animate({ backgroundColor: "blue" }), 5000;
         // $(this).css("background-color", "blue").animate({}), 5000;
         // $(this).css("background-color", "red")
-        $(this).css("background-color", "blue")
-        $(this).append("<h2>Animacja zakończona</h2>");
+        $(this).css({
+          transition: "background-color 5s",
+          backgroundColor: "blue",
+        });
+
+        setTimeout(() => {
+          kwadrat.append("<h2>Animacja zakończona</h2>");
+          
+        });
       }
     );
   });
